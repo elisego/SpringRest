@@ -49,7 +49,7 @@ public class MainController {
 
         Book bookToUpdate = bookRepository.findById((long) id).get();
         bookToUpdate.setTitle(book.getTitle());
-        bookToUpdate.setAuhor(book.getAuhor());
+        bookToUpdate.setAuthor(book.getAuthor());
         bookToUpdate.setDescription(book.getDescription());
         return bookRepository.save(bookToUpdate);
     }

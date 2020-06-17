@@ -16,7 +16,7 @@ public class Book {
     @Column(nullable = false)
     private String title;
 
-    private String auhor;
+    private String author;
 
     private String description;
 
@@ -24,10 +24,10 @@ public class Book {
 
     }
 
-    public Book(Long id, String title, String auhor, String description) {
+    public Book(Long id, String title, String author, String description) {
         this.id = id;
         this.title = title;
-        this.auhor = auhor;
+        this.author = author;
         this.description = description;
     }
 
@@ -47,12 +47,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuhor() {
-        return auhor;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuhor(String auhor) {
-        this.auhor = auhor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getDescription() {
