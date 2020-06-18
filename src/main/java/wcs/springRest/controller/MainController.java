@@ -21,7 +21,7 @@ public class MainController {
         return bookRepository.findAll();
     }
 
-    @GetMapping("/book/{id}")
+    @GetMapping("/books/{id}")
     public Book show(@PathVariable int id){
 
         Optional<Book> optionalBook = bookRepository.findById((long) id);
@@ -31,7 +31,7 @@ public class MainController {
         return null;
     }
 
-    @PostMapping("/book/search")
+    @PostMapping("/books/search")
     public List<Book> search(@RequestBody Map<String, String> body){
 
         String searchTerm = body.get("text");
@@ -44,7 +44,7 @@ public class MainController {
         return bookRepository.save(book);
     }
 
-    @PutMapping("/book/{id}")
+    @PutMapping("/books/{id}")
     public Book update(@PathVariable int id, @RequestBody Book book){
 
         Book bookToUpdate = bookRepository.findById((long) id).get();
@@ -54,7 +54,7 @@ public class MainController {
         return bookRepository.save(bookToUpdate);
     }
 
-    @DeleteMapping("book/{id}")
+    @DeleteMapping("books/{id}")
     public boolean delete(@PathVariable int id){
 
         bookRepository.deleteById((long) id);
